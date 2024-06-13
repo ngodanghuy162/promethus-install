@@ -6,4 +6,4 @@ Các bước cài:
 - kubectl apply -f prometheus-operator/rbac
 - kubectl apply -f prometheus-operator/deployment
 - kubectl apply -f prometheus
-- Sau đó, ta sẽ truy cập được vào dạng serive dạng nodeport theo e dể file service (port 30900). / có thể chạy: kubectl port-foward svc/prometheus-operated 9090 -n monitoring (port 9090)
+- Sau đó, ta sẽ truy cập được vào dạng serive dạng nodeport theo e dể file prometheus/5-service.yaml (port 32367). / có thể chạy: kubectl port-foward svc/prometheus-operated 9090 -n monitoring (port 9090)
