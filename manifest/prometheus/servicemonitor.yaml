@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: myapp-service-monitor
+  namespace: app
+  labels:
+    release: prometheus
+spec:
+  endpoints:
+    - interval: 15s
+      path: /actuator/prometheus
+      port: metrics
+      targetPort: 8080
+      scrapeTimeout: 14s
+  namespaceSelector:
+    matchNames:
+    - app
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: helm
+      release: prometheus
